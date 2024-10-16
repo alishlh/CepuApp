@@ -42,7 +42,7 @@ class LoginController extends Controller
     public function validateLogin(Request $request)
     {
         $request->validate([
-            $this->username() => 'requred|email',
+            $this->username() => 'required|email',
             'password' => 'required|string',
         ], [
             $this->username() . '.required' => 'Kolom ' . $this->username() . ' tidak boleh kosong',

@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     //return view('welcome');
     //return view('front.index');
-    return view('front.semua-pengaduan');
+    return view('dashboard.index');
+    // return view('front.semua-pengaduan');
     // return view('front.statistik');
     // return view('front.form-pengaduan');
 });
@@ -28,6 +29,11 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('login', [LoginController::class, 'login']);
     Route::get('register', [LoginController::class, 'showRegistrationForm'])->name('register');
     Route::get('register', [LoginController::class, 'register']);
+})->middleware(['auth']);
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/', function () {
+        return view('dashboard.index');
+    });
 });
 
 require __DIR__ . '/auth.php';
