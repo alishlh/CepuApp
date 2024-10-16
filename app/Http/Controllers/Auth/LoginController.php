@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -36,5 +37,19 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('auth')->only('logout');
+    }
+
+    public function validateLogin(Request $request)
+    {
+        $request->validate([
+            $this->username() => 'requred|email',
+            'password' => 'required|string',
+        ], [
+            $this->username() . '.required' => 'Kolom ' . $this->username() . ' tidak boleh kosong',
+
+            $this->username() . 'email' => 'Kolom ' . $this->username() . ' harus berupa email',
+            'password.required' => 'Kolom password tidak boleh kosong',
+            'password.string' => 'Kolom harus berupa text',
+        ]);
     }
 }
