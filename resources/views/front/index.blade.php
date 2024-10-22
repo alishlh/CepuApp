@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#form-pengaduan">Form Pengaduan</a>
+                    <a class="nav-link" href="{{  }}">Form Pengaduan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#list-pengaduan">List Pengaduan</a>

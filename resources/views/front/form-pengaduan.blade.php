@@ -1,72 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.base-front2')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title','Sistem Informasi Pengaduan')</title>
-    <link rel="shortcut icon" href="{{ asset('images/logo-pengaduan') }}" type="image/x-icon">
-    @yield('css')
-    <link rel="stylesheet" href="{{asset('mazer/assets/compiled/css/app.css')}}">
-    <link rel="stylesheet" href="{{asset('mazer/assets/compiled/css/app-dark.css')}}">
-    <link rel="stylesheet" href="{{asset('mazer/assets/compiled/css/iconly.css')}}">
-    <style>
+@section('title','Form Pengaduan')
 
-        .logo-pengaduan{
-            width: 160px;
-            height: auto !important;
-        }
-
-        .menu-item {
-            /* Gaya dasar untuk setiap item menu */
-            margin: 0 15px; /* Spasi antar item */
-        }
-
-        .menu-link {
-            text-decoration: none; /* Menghapus garis bawah */
-            color: #000; /* Warna teks default */
-            padding: 10px 15px; /* Padding untuk area klik */
-            transition: color 0.3s; /* Transisi halus saat hover */
-        }
-
-        .menu-item.active .menu-link {
-            color: #007bff; /* Warna teks saat aktif */
-            font-weight: bold; /* Menebalkan teks saat aktif */
-        }
-
-        /* Gaya saat hover */
-        .menu-link:hover {
-            color: #0056b3; /* Warna saat hover */
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-    </style>
-</head>
-
-<body>
-    <script src="{{asset('mazer/assets/static/js/initTheme.js')}}"></script>
-    <div id="app">
-        <div id="main" class="layout-horizontal">
-            
-            @include('includes.front.navbar')
-
-            <div class="content-wrapper container">
-                
-            @yield('content')
-
+@section('content')
+<div class="page-heading">
+    <h3>Form Pengaduan Masyarakat</h3>
+</div>
+    <section id="multiple-column-form">
+        <div class="row match-height">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-header text-center text-uppercase bg-primary text-white">
+                        <h4 class="card-title">Masukkan Informasi Pengaduan</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <form class="form">
+                                <div class="row">
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <div class="form-group">
+                                            <label for="first-name-column">Nama Lengkap</label>
+                                            <input type="text" id="first-name-column" class="form-control" placeholder="Nama Lengkap" name="fname-column" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <div class="form-group">
+                                            <label for="country-floating">Judul Pengaduan</label>
+                                            <input type="text" id="country-floating" class="form-control" name="country-floating" placeholder="Judul Pengaduan" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <div class="form-group">
+                                            <label for="last-name-column">Nomor Telepon</label>
+                                            <input type="text" id="last-name-column" class="form-control" placeholder="Nomor Telepon" name="lname-column" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <div class="form-group">
+                                            <label for="company-column">Gambar</label>
+                                            <input type="file" id="company-column" class="form-control" name="company-column" placeholder="Image" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <div class="form-group">
+                                            <label for="city-column">Alamat Email</label>
+                                            <input type="email" id="city-column" class="form-control" placeholder="Alamat Email" name="city-column" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <div class="form-group">
+                                            <label for="email-id-column">Deskripsi</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                        <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            @include('includes.front.footer')            
         </div>
-    </div>
-    <script src="{{asset('mazer/assets/static/js/pages/horizontal-layout.js')}}"></script>
-    <script src="{{asset('mazer/assets/static/js/components/dark.js')}}"></script>
-    <script src="{{asset('mazer/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{asset('mazer/assets/compiled/js/app.js')}}"></script>
-    <script src="{{asset('mazer/assets/static/js/pages/dashboard.js')}}"></script>
-    @yield('js')
-</body>
-</html
+        
+        
+=
+        
+        
+        
+        
+        
+    </section>
+@endsection

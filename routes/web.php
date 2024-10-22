@@ -2,21 +2,25 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\UsersController;
 //use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    //return view('welcome');
-    //return view('front.index');
-    return view('dashboard.index');
-    // return view('front.semua-pengaduan');
-    // return view('front.statistik');
-    // return view('front.form-pengaduan');
-})->middleware('auth');
+// Route::get('/', function () {
+//     //return view('welcome');
+//     //return view('front.index');
+//     //return view('dashboard.index');
+//     return view('front.semua-pengaduan');
+//     // return view('front.statistik');
+//     // return view('front.form-pengaduan');
+// });
 
 //DASHBOARD
+Route::get('/', [FrontController::class, 'semuaPengaduan'])->name('guest.allcomplaints');
+Route::get('/complaint-statistics', [FrontController::class, 'semuaStatistik'])->name('guest.alldata');
+Route::get('/complaint-form', [FrontController::class, 'formPengaduan'])->name('guest.formcomplaint');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,6 +40,11 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('register', [LoginController::class, 'showRegistrationForm'])->name('register');
     Route::get('register', [LoginController::class, 'register']);
 })->middleware(['auth']);
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+});
 
 //ADMIN
 

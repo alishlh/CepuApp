@@ -1,131 +1,114 @@
-Codeshare logo
- ShareSign UpLog In
-53
-                                        <i class="bi-arrow-repeat" style="animation: spin 3s linear infinite;"></i>
-54
-                                    </div>
-55
-                                </div>
-56
-                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-57
-                                    <h6 class="text-muted font-semibold">Diproses</h6>
-58
-                                    <h6 class="font-extrabold mb-0">80.000</h6>
-59
-                                </div>
-60
-                            </div>
-61
-                        </div>
-62
-                    </div>
-63
-                </div>
-64
-                <div class="col-6 col-lg-3 col-md-6">
-65
-                    <div class="card">
-66
-                        <div class="card-body px-4 py-4-5">
-67
-                            <div class="row">
-68
-                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-69
-                                    <div class="stats-icon green mb-2">
-70
-                                        <i class="bi-check-circle"></i>
-71
-                                    </div>
-72
-                                </div>
-73
-                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-74
-                                    <h6 class="text-muted font-semibold">Selesai</h6>
-75
-                                    <h6 class="font-extrabold mb-0">112</h6>
-76
-                                </div>
-77
-                            </div>
-78
-                        </div>
-79
-                    </div>
-80
-                </div>
-81
-            </div>
-82
-        </div>
-83
-    </section>
-84
-    <div class="card">
-85
-        <div class="card-header">
-86
-            <h4>Statistik Pengaduan</h4>
-87
-        </div>
-88
-        <div class="card-body">
-89
-            <div id="chart-pengaduan"></div>
-90
-        </div>
-91
-    </div>
-92
+@extends('layouts.base-front2')
+
+@section('title','Data Statistik Pengaduan')
+
+@section('content')
+<div class="page-heading">
+    <h3>Laporan Jumlah Pengaduan</h3>
 </div>
-93
+<div class="page-content">
+    <section class="row">
+        <div class="col-12 col-lg-12">
+            <div class="row">
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon purple mb-2">
+                                        <i class="bi-chat"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Total Pengaduan</h6>
+                                    <h6 class="font-extrabold mb-0">112.000</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon red mb-2">
+                                        <i class="bi-hourglass" style="animation: spin 3s linear infinite;"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Pending</h6>
+                                    <h6 class="font-extrabold mb-0">183.000</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon blue mb-2">
+                                        <i class="bi-arrow-repeat" style="animation: spin 3s linear infinite;"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Diproses</h6>
+                                    <h6 class="font-extrabold mb-0">80.000</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon green mb-2">
+                                        <i class="bi-check-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Selesai</h6>
+                                    <h6 class="font-extrabold mb-0">112</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="card">
+        <div class="card-header">
+            <h4>Statistik Pengaduan</h4>
+        </div>
+        <div class="card-body">
+            <div id="chart-pengaduan"></div>
+        </div>
+    </div>
+</div>
 @endsection
-94
-​
-95
+
 @section('js')
-96
     <script src="{{asset('mazer/assets/extensions/apexcharts/apexcharts.min.js')}}"></script>
-97
     <script>
-98
         var options = {
-99
             series: [30, 80, 25],
-100
             chart: {
-101
                 type: 'pie',
-102
                 height: 350
-103
             },
-104
             labels: ['Pending', 'Diproses', 'Selesai'],
-105
             colors: ['#ff7976', '#57caeb', '#5ddab4'],
-106
             legend: {
-107
                 position: 'bottom',
-108
                 horizontalAlign: 'center'
-109
             }
-110
         };
-111
         var chart = new ApexCharts(document.querySelector("#chart-pengaduan"), options);
-112
         chart.render();
-113
     </script>
-114
 @endsection
-
-
-
-
-Hide Ads

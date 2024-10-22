@@ -79,7 +79,12 @@
                                                     @csrf
                                                     <a href="#" class="btn btn-success">Detail</a>
                                                     <a href="{{route('admin.users.edit', $user->id )}}" class="btn btn-warning">Edit</a>
+                                                    @if (Auth::user()->id == $user->id)
+                                                    <button disabled href="" class="btn btn-danger">Delete</button>
+                                                        
+                                                    @else     
                                                     <button type="submit" href="" class="btn btn-danger" onclick="return confirn('Apakah anda yakin akan menghapus data')">Delete</button>
+                                                    @endif
                                                 </form>
                                             </td>
                                         </tr>
