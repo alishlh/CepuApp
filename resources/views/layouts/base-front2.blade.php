@@ -55,7 +55,7 @@
             @include('includes.front.navbar')
 
             <div class="content-wrapper container">
-                
+           
             @yield('content')
 
             </div>

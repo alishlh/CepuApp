@@ -24,4 +24,18 @@ class Complaint extends Model
     {
         return $this->hasMany(ComplaintResponse::class);
     }
+    //cara pertama untuk menampilkan badge enum status (penggunaan check di file semua-pendaduan.blade.php) 
+    public function getStatusBadgeAttribute()
+    {
+        //switch cash
+        return match ($this->status) {
+            'pending' => '<span class="badge" style="background-color: #ff7976;">PENDING</span>',
+            'selesai' => '<span class="badge" style="background-color: #5ddab4;">SELESAI</span>',
+            default => '<span class="badge" style="background-color: #57caeb;">' . strtoupper($this->status) . '</span>',
+        };
+    }
+    function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
