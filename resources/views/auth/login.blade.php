@@ -15,6 +15,7 @@
                         @csrf
                 <div class="form-group position-relative has-icon-left mb-4">
                     <input type="text" name="email" value="{{ old('email') }}" class="form-control form-control-xl @error('email') is-invalid @enderror" placeholder="Email">
+                    
                     <div class="form-control-icon">
                         <i class="bi bi-envelope"></i>
                     </div>

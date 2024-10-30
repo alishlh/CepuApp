@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\UserComplaintController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -55,3 +56,10 @@ require __DIR__ . '/auth.php';
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::prefix('user')->middleware('auth', 'isUser')->group(function () {
+    Route::get('/', [UserComplaintController::class, 'index'])->name('user.index');
+    Route::get('/complaint-form', [UserComplaintController::class, 'create'])->name('user.form.complaint');
+    Route::post('/complaint-form/store', [UserComplaintController::class, 'store'])->name('user.form.complaint.store');
+});

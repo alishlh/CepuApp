@@ -4,7 +4,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">
                     <a href="{{url('/')}}">
-                        <img src="{{ asset('images/logo-pengaduan.jpeg') }}" class="img-fluid logo-pengaduan" alt="Logo" srcset="">
+                        <img src="{{ asset('images/logo-pengaduan.png') }}" class="img-fluid logo-pengaduan" alt="Logo" srcset="">
                     </a>
                 </div>
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-2 ms-2">
@@ -45,9 +45,13 @@
                 <li class="sidebar-title">Menu</li>
 
                 @if(Auth::user()->role == 'admin')
+
                 @include('includes.menus.menu-admin')
+
                 @else
+
                 @include('includes.menus.menu-user')
+                
                 @endif
 
                 <!-- <li

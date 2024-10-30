@@ -3,7 +3,7 @@
         <div class="container">
             <div class="logo">
                 <a href="{{url('/')}}">
-                    <img src="{{ asset('images/logo-pengaduan.jpeg') }}" class="img-fluid logo-pengaduan" alt="Logo">
+                    <img src="{{ asset('images/logo-pengaduan.png') }}" class="img-fluid logo-pengaduan" alt="Logo">
                 </a>
             </div>
             @if(Auth::check())
