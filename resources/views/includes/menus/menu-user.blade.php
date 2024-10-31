@@ -15,24 +15,24 @@
 </li>
 
 <li
-    class="sidebar-item has-sub  {{ request()->routeIs('admin.all.complaints') || request()->routeIs('admin.all.pending.complaints') || request()->routeIs('admin.all.process.complaints') || request()->routeIs('admin.all.success.complaints') ? 'active' : '' }}">
-    <a href="{{route('user.form.complaint')}}" class='sidebar-link'>
+    class="sidebar-item has-sub  {{ request()->routeIs('user.all.complaint') || request()->routeIs('user.pending.complaint') || request()->routeIs('user.proses.complaints') || request()->routeIs('user.selesai.complaints') ? 'active' : '' }}">
+    <a href="#" class='sidebar-link'>
         <i class="bi bi-flag-fill"></i>
         <span>Lihat Pengaduan</span>
     </a>
 
     <ul class="submenu submenu-closed" style="--submenu-height: 215px;">
-        <li class="submenu-item">
-            <a class="submenu-link" href="">Track Semua Pengaduan</a>
+        <li class="submenu-item {{ request()->routeIs('user.all.complaint') ? 'active' : '' }} ">
+            <a class="submenu-link" href="{{route('user.all.complaint')}}">Track Semua Pengaduan</a>
         </li>
-        <li class="submenu-item">
-            <a class="submenu-link" href="">Pending</a>
+        <li class="submenu-item {{ request()->routeIs('user.pending.complaint') ? 'active' : '' }} ">
+            <a class="submenu-link" href="{{route('user.pending.complaint')}}">Pending</a>
         </li>
-        <li class="submenu-item">
-            <a class="submenu-link" href="">Prosess</a>
+        <li class="submenu-item {{ request()->routeIs('user.proses.complaint') ? 'active' : '' }} ">
+            <a class="submenu-link" href="{{route('user.proses.complaint')}}">Proses</a>
         </li>
-        <li class="submenu-item ">
-            <a class="submenu-link" href="">Selesai</a>
+        <li class="submenu-item {{ request()->routeIs('user.selesai.complaint') ? 'active' : '' }} ">
+            <a class="submenu-link" href="{{route('user.selesai.complaint')}}">Selesai</a>
         </li>
     </ul>
 

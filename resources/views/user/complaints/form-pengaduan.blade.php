@@ -1,5 +1,4 @@
 @extends('layouts.base-app')
-
 @section('title','Form Pengaduan')
 
 @section('css')
