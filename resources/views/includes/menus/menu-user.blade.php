@@ -1,14 +1,14 @@
 <li
-    class="sidebar-item active ">
-    <a href="{{route('user.index')}}" class='sidebar-item {{ request()->routeIs('user.index') ? 'active' : ''}}'>
+    class="sidebar-item active {{ request()->routeIs('user.index') ? 'active' : ''}}">
+    <a href="{{route('user.index')}}" class='sidebar-link '>
         <i class="bi bi-grid-fill"></i>
         <span>Dashboard</span>
     </a>
 </li>
 
 <li
-    class="sidebar-item active ">
-    <a href="{{route('user.form.complaint')}}" class='sidebar-item {{ request()->routeIs('user.form.complaint') ? 'active' : ''}}'>
+    class="sidebar-item  {{ request()->routeIs('user.form.complaint') ? 'active' : ''}}">
+    <a href="{{route('user.form.complaint')}}" class='sidebar-link '>
         <i class="bi bi-grid-fill"></i>
         <span>Ajukan Pengaduan</span>
     </a>
