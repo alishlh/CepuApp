@@ -54,7 +54,7 @@ class FrontController extends Controller
             $path = 'public/complaints';
             $image = $request->file('image');
             $name = $image->getClientOriginalName();
-            $imagePath = $request->file($image)->storeAs($path, $name);
+            $imagePath = $request->file('image')->storeAs($path, $name);
 
             $imagePath = $image->store('public/compliant_pengguna');
         }

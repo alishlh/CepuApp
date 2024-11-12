@@ -71,7 +71,7 @@
                                     <div class="col-md-6 col-12 mb-3">
                                         <div class="form-group">
                                             <label for="email-id-column">Deskripsi</label>
-                                            <textarea class="form-control @error('description') is-invalid @enderror" value="{{old('description')}}"  name="description" id="description" rows="3" required>
+                                            <textarea class="form-control @error('description') is-invalid @enderror" value="{{old('description')}}"  name="description" id="description"  required>
                                                 @error('description')
                                                 <div class="invalid-feedback">{{$message}}</div>
                                             @enderror
