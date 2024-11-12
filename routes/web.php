@@ -40,10 +40,13 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('complaints/{id}/response', [AdminController::class, 'showComplaint'])->name('response.complaints');
 
     Route::get('/all-pending-complaints', [AdminController::class, 'allPendingComplaints'])->name('admin.all.pending.complaints');
-    Route::get('all-process-complaints', [AdminController::class, 'allProcessComplaints'])->name('admin.all.process.complaints');
-    Route::get('all-success-complaints', [AdminController::class, 'allSuccessComplaints'])->name('admin.all.success.complaints');
+    Route::get('/all-process-complaints', [AdminController::class, 'allProcessComplaints'])->name('admin.all.process.complaints');
+    Route::get('/all-success-complaints', [AdminController::class, 'allSuccessComplaints'])->name('admin.all.success.complaints');
+
+    Route::post('/complaint-response', [AdminController::class, 'storeResponse'])->name('admin.complaints.response');
 
 
+    //USER CONTROLLER
     Route::get('/users', [UsersController::class, 'index'])->name('admin.users.index');
     Route::post('/users/store', [UsersController::class, 'store'])->name('admin.users.store');
     Route::post('/users/destroy/{id}', [UsersController::class, 'destroy'])->name('admin.users.destroy');
