@@ -99,7 +99,7 @@
                                 @forelse ($data as $value)
                                     
                                 <tr>
-                                    <td><img src="{{ $value->image }}" alt="{{$value->title}}"></td>
+                                    <td><img src="{{ asset('/storage/complaints_pengguna/' . $value->image) }}" alt="{{$value->title}}"></td>
                                     <td>{{$value->guest_name}}</td>
                                     <td>{{$value->title}}</td>
                                     <td>{{$value->guest_telp}}</td>

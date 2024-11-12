@@ -63,7 +63,7 @@
                                     <div class="col-md-6 col-12 mb-3">
                                         <div class="form-group">
                                             <label for="image">Gambar</label><br>
-                                            <img src="" class="img-fluid w-75" alt="$complaint->title">
+                                            <img src="{{asset('/storage/complaints_pengguna/' . $data->image)}}" class="mx-auto rounded d-block w-75" alt="{{$data->title}}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12 mb-3">

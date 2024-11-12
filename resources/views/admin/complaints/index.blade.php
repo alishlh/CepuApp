@@ -110,7 +110,7 @@
                                 @foreach ($data as $value)
                                 
                                 <tr>
-                                    <td><img src="" alt=""></td>
+                                    <td><img src="{{asset('/storage/complaints_pengguna/' . $value->image)}}" alt="{{$value->title}}"></td>
                                     <td>
                                         {{ $value->user->name ?? $value->guest_name}}
                                         {{-- kegunaan ?? untuk apa bilan yang sebelumnya tidak ad maka tampilkan value setelh ny --}}
@@ -125,6 +125,13 @@
                                     @else #57caeb
                                     @endif">{{ strtoupper($value->status) }}</span></td>
                                     <td class="text-center"><a href="{{route('response.complaints', $value->id)}}">Tanggapi</a></td>
+                                    <td class="text-center">
+                                        @if($value->status == 'selesai')
+                                        <a href="{{ route('response.complaint', $value->id) }}">Detail</a>
+                                        @else
+                                        <a href="{{ route('response.complaint', $value->id) }}">Tanggapi</a>
+                                    </td>    
+                                    
                                     
                                 </tr>                                
                                 @endforeach
