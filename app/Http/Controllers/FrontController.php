@@ -55,8 +55,7 @@ class FrontController extends Controller
             $image = $request->file('image');
             $name = $image->getClientOriginalName();
             $imagePath = $request->file('image')->storeAs($path, $name);
-
-            $imagePath = $image->store('public/compliant_pengguna');
+            $imagePath = $image->store('public/complaints_pengguna');
         }
 
         $user = Auth::user();

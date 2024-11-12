@@ -110,7 +110,7 @@
                                 @foreach ($data as $value)
                                 
                                 <tr>
-                                    <td><img class="img-thumbnail" src="{{asset('/storage/complaints_pengguna/' . $value->image)}}" alt="{{$value->title}}"></td>
+                                    <td><img class="img-thumbnail" src="{{ asset('/storage/complaints_pengguna/' . $value->image) }}" alt="{{ $value->title }}"></td>
                                     <td>
                                         {{ $value->user->name ?? $value->guest_name}}
                                         {{-- kegunaan ?? untuk apa bilan yang sebelumnya tidak ad maka tampilkan value setelh ny --}}
