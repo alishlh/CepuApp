@@ -139,5 +139,4 @@ class UserComplaintController extends Controller
             'data' => $data
         ]);
     }
-    public function FunctionName(): Returntype {}
 }
